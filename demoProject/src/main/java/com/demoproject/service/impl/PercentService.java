@@ -10,16 +10,9 @@ import java.util.List;
 
 @Service
 public class PercentService implements CalculatorService<PercentDto> {
-    private List<PercentDto> percentCalcList = new ArrayList<>();
-
-    public List<PercentDto> getCalculations() {
-        return percentCalcList;
-    }
-
-
-    public void saveCalc(PercentDto calc) {
+    public double calculate(PercentDto calc) {
         calc.setResult((int) (calc.getPercent() * calc.getVolume() * 10));
-        percentCalcList.add(calc);
+        return calc.getResult();
     }
 
 
